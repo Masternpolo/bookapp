@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Delete Book</title>
+</head>
+<body>
+    <header>
+        <%- include('partials/adminHeader'); %>
+    </header>
+    <main>
+        <form action="/books/<%= book.id %>/delete" method="post">
+            <p>Are you sure ypu want to delete <strong><%=book.title%></strong>?</p>
+            <button type="submit">Delete</button>
+        </form>
+        
+    </main>
+</body>
+</html>

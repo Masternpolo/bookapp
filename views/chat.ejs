@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chat App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="socket.io/socket.io.js"></script>
+</head>
+
+<body>
+  <header class="top">
+    <% if(user.role==='admin' ) { %>
+      <%- include('partials/adminHeader'); %>
+        <% } else { %>
+          <%- include('partials/header'); %>
+            <% } %>
+  </header>
+  <h1>Chat App</h1>
+
+  <h2>Welcome <%= user.username %>
+  </h2>
+  <p id="hide"><%= user.username%></p>
+
+  <div id="chat-container">
+    <ul id="chatbox">
+    
+    </ul>
+    <form id="chat-form">
+      <input type="text" id="message" placeholder="Type a message...">
+      <button id="send-btn">Send</button>
+    </form>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

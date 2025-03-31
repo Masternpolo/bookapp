@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="top">
+        <% if(user.role==='admin' ) { %>
+            <%- include('partials/adminHeader'); %>
+                <% } else { %>
+                    <%- include('partials/header'); %>
+                        <% } %>
+    </header>
+    <main>
+        <section id="first" style="display: flex; justify-content: space-between; padding: 1.5rem 3.5rem;">
+            <div class="greeting">
+                <h1>Welcome to Book Hub Library</h1>
+                <h2>Good day <%= user.username %>
+                </h2>
+            </div>
+
+            <form action="/filter" method="GET">
+                <select name="genre" id="genre">
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Dystopian">Dystopian</option>
+                    <option value="Historical Fiction">Historical Fiction</option>
+                    <option value="Steampunk">Steampunk</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Adventure">Adventure</option>
+                </select>
+                <button type="submit">Sort</button>
+            </form>
+
+            <div class="rightnav">
+                <form action="/search" method="GET" id="library">
+                    <input type="text" name="title" id="title">
+                    <button class="btn btn-sm" type="submit">Search</button>
+                </form>
+            </div>
+        </section>
+        <div class="card-container">
+            <% books.forEach((book)=> { %>
+                <div class="card">
+                    <div>
+                        <img src="<%= book.cover_image_url%>" alt="Book cover">
+                    </div>
+
+                    <p>
+                        <%= book.title.toUpperCase()%>
+                    </p>
+                    <h3>
+                        <%= book.author.toUpperCase() %>
+                    </h3>
+                    <p>
+                        <%= book.genre.toUpperCase() %>
+                    </p>
+                    <h4>
+                        <%= book.year %>
+                    </h4>
+
+                    <% if(user.role==='admin' ) { %>
+                        <div class="btn" style="display: flex; gap: 10px;">
+                            <a href="/books/<%= book.id %>">
+                                <span id="edit" style="background-color: skyblue;">Edit</span>
+                            </a>
+                            <a href="/books/<%= book.id %>/delete">
+                                <span id="delete" style="background-color: red;">Delete</span>
+                            </a>
+                        </div>
+                        <% } else { %>
+                            <a href="#">
+                                <span id="download" style="background-color: red;">Download</span>
+                            </a>
+                            <% } %>
+
+
+                </div>
+                <% }); %>
+                    <% if(message ) { %>
+                        <p>
+                            <%= message %>
+                        </p>
+                        <% } %>
+        </div>
+        <div class="paginate">
+            <% for(page=1; page<=totalPages; page++ ) {%>
+                <a href="/books?page=<%= page %>"><span>
+                        <%= page %>
+                    </span></a>
+                <% } %>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

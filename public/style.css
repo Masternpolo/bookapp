@@ -1,0 +1,238 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Times New Roman', Times, serif;
+  color: #CC9600;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+#chat-form {
+  /* margin-top: 20px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2rem auto;
+  /* position: fixed;
+  top: 25rem; */
+}
+
+#message {
+  max-width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  word-wrap: break-word;
+  font-size: 14px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#send-btn {
+  width: 23%;
+  height: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+}
+
+#chatbox {
+  margin: 20px auto;
+  width: 50rem;
+  height: 20rem;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #000;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+#chat-log p {
+  margin-bottom: 10px;
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url(./img/bg-header.png);
+  padding: 1rem 2.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+}
+
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 2rem 3rem;
+  gap: 1rem;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px dotted black;
+  box-shadow: #f0f0f0;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+#one {
+  background-image: url(./img/bg.png);
+  background-size: cover;
+  height: 45rem;
+  padding: 2rem 3rem;
+}
+
+.login {
+  display: flex;
+  flex-direction: row;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+input {
+  width: 30rem;
+  height: 2.5rem;
+  background-color: #D6CE80;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+}
+ select {
+  background-color: #D6CE80;
+  align-self: first baseline;
+  margin-left: 4rem;
+  height: 1.5rem;
+  width: 8rem;
+  border-radius: 0.5rem;
+ }
+.div-form {
+  padding: 8rem 3rem;
+  background-color: #000000;
+  width: 100%;
+  text-align: center;
+}
+
+form button {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #CC9600;
+  color: #fff;
+  align-self: flex-end;
+  margin: 0rem 4rem 0 0;
+  cursor: pointer;
+}
+
+.loginU {
+  display: flex;
+  justify-content: space-between;
+  gap: 9rem;
+  margin-top: 1.5rem;
+}
+
+.register {
+  display: flex;
+  justify-content: space-between;
+  gap: 15rem;
+  margin-top: 3rem;
+}
+form p {
+  color: #fff;
+}
+input:focus {
+  border: 3px solid #fff;
+}
+.paginate {
+  padding: 0 3rem 2rem 3rem;
+  display: flex;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.paginate a {
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 1px solid #000;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 0.2rem;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.sender {
+  align-self: flex-end;
+  background-color: #007bff;
+  color: white;
+  text-align: right;
+}
+
+.receiver {
+  align-self: flex-start;
+  background-color: #f1f1f1;
+  color: black;
+  text-align: left;
+}
+#hide {
+  display: none;
+}
+
+.card img {
+  width: 15rem;
+  border-radius: 0.4rem;
+}

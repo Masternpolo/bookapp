@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Register</title>
+</head>
+<body>
+    <main>
+        <section class="login">
+            <div class="login-bg">
+                <img src="img/bg-login.png" alt="">
+            </div>
+            <div class="div-form">
+                <h2 style="margin: 1rem 0;">Welcome to Neth BookPoint!</h2>
+                <p style="color: #fff;">Discover a seamless way to sell your books and unlock exclusive benefits. Enjoy
+                    a hassle-free experience, save valuable time, and take advantage of our amazing offers.
+                </p>
+                <form action="/register" method="post">
+                    <h3 style="margin: 2rem 0 1rem 0;">Register Your Account!</h3>
+                    <p style="color: red; font-size: medium;"><%= message %></p>					
+                      
+                    <input type="text" name="username" placeholder="    Enter username">
+                    <input type="email" name="email" placeholder="    Enter email">           
+                    <input type="password" name="password" placeholder="    Enter password">
+            
+                    <select name="role" id="role">
+                        <option value="user">User</option>
+                        <option value="admin" disabled>Admin</option>
+                    </select>
+            
+                    <% errors.map((error) => { %>				
+                        <p style="color: red; font-size: medium;"><%= error.msg %></p>					
+                    <% }); %>
+
+                    <div class="register" style="margin-top: 1rem;">
+                        <p>Already have an account?</p>
+                        <h4><a href="/login" style="color: #F29C0D;">Login</a></h4>
+                    </div>
+                    <button type="submit">submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>

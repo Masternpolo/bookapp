@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All users</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header class="top">
+        <% if(user.role==='admin') { %>
+            <%- include('partials/adminHeader'); %>
+              <% } else { %>
+                <%- include('partials/header'); %>
+                  <% } %>
+    </header>
+    <main>
+        <section id="first" style="display: flex; justify-content: space-between; padding: 1.5rem 3.5rem;">
+            <div class="rightnav">
+                <input type="text" name="search" id="search">
+                <button class="btn btn-sm">Search</button>
+            </div>
+        </section>
+
+        <div class="card-container">
+            <% users.map((user)=> { %>
+                <div class="card">
+                    <h3>
+                        <%= user.username %>
+                    </h3>
+                    <p>
+                        <%= user.email %>
+                    </p>
+                    <p style="display: none;">
+                        <%= user.id %>
+                    </p>
+                </div>
+                <% }); %>
+        </div>
+        <p>
+            <%= message %>
+        </p>
+    </main>
+</body>
+
+</html>

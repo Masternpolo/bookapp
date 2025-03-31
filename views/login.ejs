@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>login</title>
+</head>
+
+<body>
+    <main>
+        <section class="login">
+            <div class="login-bg">
+                <img src="img/bg-login.png" alt="">
+            </div>
+            <div class="div-form">
+                <h2 style="margin: 1rem 0;">Welcome to Neth BookPoint!</h2>
+                <p style="color: #fff;">Discover a seamless way to sell your books and unlock exclusive benefits. Enjoy
+                    a hassle-free experience, save valuable time, and take advantage of our amazing offers.
+                </p>
+                <form action="/login" method="post">
+                    <h3 style="margin: 2rem 0;">Login to Your Account!</h3>
+                    <input type="text" name="username" placeholder="    Enter username">
+                    <input type="password" name="password" placeholder="    Enter password">
+                    <% errors.map((error)=> { %>
+                        <p style="color: red; font-size: xx-small;">
+                            <%= error.msg %>
+                        </p>
+                        <% }); %>
+                            <p style="color: red; font-size: xx-small;">
+                                <%= message %>
+                            </p>
+                            <div class="loginU">
+                                <p>Don't you have an account?</p>
+                                <h4><a href="/register" style="color: #F29C0D;">Create an account</a></h4>
+                            </div>
+                            <button>Login</button>
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Uploads</title>
+</head>
+
+<body>
+    <header class="top">
+        <%- include('partials/adminHeader'); %>
+    </header>
+    <main>
+        <section class="login">
+            <div class="login-bg">
+                <img src="img/bg-login.png" alt="">
+            </div>
+            <div class="div-form">
+                <h2 style="margin: 1rem 0;">Welcome to Neth BookPoint!</h2>
+                <p style="color: #fff;">Discover a seamless way to sell your books and unlock exclusive benefits. Enjoy
+                    a hassle-free experience, save valuable time, and take advantage of our amazing offers.
+                </p>
+                <form action="/uploadBook" method="POST" enctype="multipart/form-data">
+                    <h3 style="margin: 2rem 0 1rem 0;">Upload New Book</h3>
+
+                    <input type="text" name="title" required id="title" placeholder="  Enter Book Title">
+                    <input type="text" name="author" required id="author" placeholder="  Enter Author">
+                    <input type="number" name="year" required id="year" placeholder="  Enter Year Of Publish">
+                    <input type="file" name="bookcover" required placeholder="  Upload Book Cover">
+
+                    <select name="genre" id="genre" required>
+                        <option value="Science Fiction">Science Fiction</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Dystopian">Dystopian</option>
+                        <option value="Historical Fiction">Historical Fiction</option>
+                        <option value="Steampunk">Steampunk</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Adventure">Adventure</option>
+                    </select>
+
+                    <% errors.map((error)=> { %>
+                        <p style="color: red; font-size: medium;">
+                            <%= error.msg %>
+                        </p>
+                        <% }); %>
+
+                        <p>
+                            <%= message %>
+                        </p>
+                            <button type="submit">submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
