@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const { promisify } = require('util');
 const db = require('../database/db');
 const query = promisify(db.query).bind(db);
