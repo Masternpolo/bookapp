@@ -3,6 +3,7 @@ let message = document.getElementById("message");
 let user = document.getElementById("hide").innerText;
 
 
+
 socket.on('chat', (data) => {
   displayMessage(data);
 });

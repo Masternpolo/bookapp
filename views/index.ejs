@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Book Store</title>
 </head>
+
 <body>
     <header class="top">
-		<%- include('partials/header'); %>
-	</header>
+        <nav class="navbar background">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <img src="img/logo.png" alt="">
+                </a>
+                <h2 style="color: #CC9600;">NETH <br> BOOKPOINT</h2>
+            </div>
+            <ul class="nav-list" id="nav-list">
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+            <div id="handburger">
+                <img src="img/open-icon.png" alt="">
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="one">
+                
+        </div>
+        <section id="two">
+            <h3>About Us</h3>
+            <p>Welcome to Neth BookPoint, your trusted source for a diverse range of books catering to every reader's taste. Established with the mission to foster a love for reading in our community, we pride ourselves on providing excellent service and a wide selection of books. Our journey began in 2021, and since then, we have grown to become a beloved destination for book lovers. Below, you'll find information about our four branches, their locations, and contact numbers.</p>
+        </section>
+    </main>
+    <footer class="top">
+        <%- include('partials/footer'); %>
+    </footer> 
 </body>
+
 </html>

@@ -1,11 +1,13 @@
+<link rel="stylesheet" href="style.css">
+
 <nav class="navbar background">
-    <div class="logo-container" style="display: flex; align-items: center;">
+    <div class="logo-container">
         <a href="/" class="logo">
             <img src="img/logo.png" alt="">
         </a>
         <h2 style="color: #CC9600;">NETH <br> BOOKPOINT</h2>
     </div>
-    <ul class="nav-list">
+    <ul class="nav-list" id="nav-list">
         <li><a href="/chat">Chat</a></li>
         <li><a href="/uploadBook">AddBook</a></li>
         <li><a href="/books">Books</a></li>
@@ -13,7 +15,11 @@
         <li><a href="/adminDashboard">Dashboard</a></li>
         <li><a href="/getAllUsers">Users</a></li>
     </ul>
-    <form action="/logout" method="post">
+    <div id="handburger" onclick="toggleNav()">
+        <img src="img/open-icon.png" alt="">
+    </div>
+    <form id="logout" class="logout" action="/logout" method="post">
         <button type="submit">Logout</button>
     </form>
 </nav>
+<script src="script2.js"></script>
