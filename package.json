@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node server",
-    "live": "node --env-file=.env.prod server.js"
+    "start":"node server"
 
   },
   "author": "EDEOGU OGOMEGBUNAM",
