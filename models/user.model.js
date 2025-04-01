@@ -10,7 +10,7 @@ class User {
             email = email.toLowerCase();
             const hashedPassword = await bcrypt.hash(password, 10);
 
-            const sql = `INSERT INTO users(username, passwordz, email, role) VALUES (?, ?, ?, ?)`;
+            const sql = `INSERT INTO users(username, password, email, role) VALUES (?, ?, ?, ?)`;
             const result = await query(sql, [username, hashedPassword, email, role]);
 
             return { message: "Registration successful", id: result.insertId };
@@ -31,7 +31,7 @@ class User {
             }
 
             const user = result[0];
-            const passwordMatch = await bcrypt.compare(password, user.passwordz);
+            const passwordMatch = await bcrypt.compare(password, user.password);
             
             return passwordMatch ? user : null;
         } catch (error) {
