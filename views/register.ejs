@@ -17,7 +17,7 @@
                 <p style="color: #fff;">Discover a seamless way to sell your books and unlock exclusive benefits. Enjoy
                     a hassle-free experience, save valuable time, and take advantage of our amazing offers.
                 </p>
-                <form action="/register" method="post">
+                <form action="/register" method="post" id="register-form">
                     <h3 style="margin: 2rem 0 1rem 0;">Register Your Account!</h3>
                     <p style="color: red; font-size: medium;"><%= message %></p>					
                       
@@ -38,11 +38,14 @@
                         <p>Already have an account?</p>
                         <h4><a href="/login" style="color: #F29C0D;">Login</a></h4>
                     </div>
-                    <button type="submit">submit</button>
+                    <button type="submit" id="submit-btn">submit</button>
                 </form>
             </div>
         </section>
     </main>
+    <footer class="top">
+        <%- include('partials/footer'); %>
+    </footer>
     
 </body>
 </html>

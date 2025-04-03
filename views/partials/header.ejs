@@ -5,17 +5,17 @@
         </a>
         <h2 style="color: #CC9600;">NETH <br> BOOKPOINT</h2>
     </div>
-    <ul class="nav-list">
-        <!-- <li><a href="#web">Web Technology</a></li> -->
+    <ul class="nav-list" id="nav-list">
         <li><a href="/chat">Chat</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/books">Library</a></li>
         <li><a href="/profile">Profile</a></li>
     </ul>
-    <div id="handburger">
+    <div id="handburger" onclick="toggleNav()">
         <img src="img/open-icon.png" alt="">
     </div>
-    <form action="/logout" method="post">
+    <form action="/logout" id="logout" class="logout" method="post">
         <button type="submit">Logout</button>
     </form>
 </nav>
+<script src="script2.js"></script>

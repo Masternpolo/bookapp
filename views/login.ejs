@@ -19,28 +19,31 @@
                 <p style="color: #fff;">Discover a seamless way to sell your books and unlock exclusive benefits. Enjoy
                     a hassle-free experience, save valuable time, and take advantage of our amazing offers.
                 </p>
-                <form action="/login" method="post">
+                <form action="/login" method="post" id="login-form">
                     <h3 style="margin: 2rem 0;">Login to Your Account!</h3>
                     <input type="text" name="username" placeholder="    Enter username">
                     <input type="password" name="password" placeholder="    Enter password">
                     <% errors.map((error)=> { %>
-                        <p style="color: red; font-size: xx-small;">
+                        <p style="color: red; font-size: x-small;">
                             <%= error.msg %>
                         </p>
                         <% }); %>
-                            <p style="color: red; font-size: xx-small;">
+                            <p style="color: red; font-size: x-small;">
                                 <%= message %>
                             </p>
                             <div class="loginU">
                                 <p>Don't you have an account?</p>
                                 <h4><a href="/register" style="color: #F29C0D;">Create an account</a></h4>
                             </div>
-                            <button>Login</button>
+                            <button id="login-btn">Login</button>
 
                 </form>
             </div>
         </section>
     </main>
+    <footer class="top">
+        <%- include('partials/footer'); %>
+    </footer>
 </body>
 
 </html>

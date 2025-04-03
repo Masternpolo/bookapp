@@ -17,13 +17,8 @@
                         <% } %>
     </header>
     <main>
-        <section id="first" style="display: flex; justify-content: space-between; padding: 1.5rem 3.5rem;">
-            <div class="greeting">
-                <h1>Welcome to Book Hub Library</h1>
-                <h2>Good day <%= user.username %>
-                </h2>
-            </div>
-
+        <section id="first">
+           
             <form action="/filter" method="GET">
                 <select name="genre" id="genre">
                     <option value="Science Fiction">Science Fiction</option>
@@ -36,16 +31,20 @@
                     <option value="Romance">Romance</option>
                     <option value="Adventure">Adventure</option>
                 </select>
-                <button type="submit">Sort</button>
+                <button type="submit" id="btn-sort">Sort</button>
             </form>
 
             <div class="rightnav">
                 <form action="/search" method="GET" id="library">
-                    <input type="text" name="title" id="title">
-                    <button class="btn btn-sm" type="submit">Search</button>
+                    <input type="text" name="title" id="rightnav">
+                    <button id="btn-search" type="submit">Search</button>
                 </form>
             </div>
         </section>
+         <div class="greeting">
+                <h3>Welcome to Book Hub Library <%= user.username %></h3>
+            </div>
+
         <div class="card-container">
             <% books.forEach((book)=> { %>
                 <div class="card">
@@ -98,6 +97,9 @@
                 <% } %>
         </div>
     </main>
+    <footer class="top">
+        <%- include('partials/footer'); %>
+    </footer>
     <script src="script.js"></script>
 </body>
 

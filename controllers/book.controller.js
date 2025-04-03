@@ -2,7 +2,7 @@ const { validationResult } = require('express-validator')
 const Book = require('../models/book.model');
 const newBook = new Book();
 const AppError = require('../utils/AppError');
-// const multer  = require('multer')
+
 
 
 
@@ -20,13 +20,10 @@ class Bookcontroller {
                 next(new AppError(`No file uploaded`, 400));
             }
             const imgPath = `/uploads/${req.file.filename}`
-          
             
             const { title, author, genre, year } = req.body;
             const message = await newBook.addBook(title, author, genre, year, imgPath);
             const user = req.user;
-            
-            console.log(message);
             
             res.status(201).render('showBook', { message, book:[], user });
         } catch (error) {
@@ -105,8 +102,7 @@ class Bookcontroller {
             const book = await newBook.filterBy(genre);
 
             if (book.length === 0) {
-                // return res.status(200).render('showBook', { message: `No book with genre type : ${genre} `, book: [], user });
-               return AppError(`No book with genre type : ${genre} `, 400)
+               return new AppError(`No book with genre type : ${genre} `, 400)
             }
             res.status(200).render('showBook', { message: null, book, user });
         } catch (error) {
