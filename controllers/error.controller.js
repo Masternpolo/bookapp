@@ -3,7 +3,7 @@ const AppError = require('../utils/AppError');
 // const handleDuplicateValueDB = (err)=>{
 //     const message = err.message;
 //     return new AppError(message, 400);
-}
+// }
 
 module.exports = ((err, req, res, next) =>{
     err.statusCode = err.statusCode || 500;
