@@ -208,6 +208,7 @@ input {
   border: none;
   border-radius: 0.5rem;
   padding: 0 1rem;
+  margin-bottom: 1rem;
 }
 #role, #genre {
   background-color: #D6CE80;
@@ -320,10 +321,7 @@ p {
   .one {
     background-size: contain;
   }
-  #login-form button {
-    align-self: flex-end;
-    margin: 0rem 1rem 0 0;
-  }
+ 
   .card-container {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -333,6 +331,8 @@ p {
   }
   #login-btn, #submit-btn {
     align-self: flex-end;
+    margin: 0rem 1rem 0 0;
+
   }
 }
 
@@ -407,6 +407,11 @@ p {
     background-size: cover;
     background-position: center;
   }
+
+  #chatbox {
+    width: 20rem;
+    height: 10rem;
+  }
   .one {
     background-size: cover;
     height: 10rem;
@@ -416,23 +421,23 @@ p {
       padding: 1.5rem 1.5rem;
   }
   nav {
-    padding: 1rem;
+    padding: 1rem 1rem;
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .nav-list {
-    display: none;
-
-  }
-
   #nav-list {
-    height: 15rem;
+    height: 12rem;
     width: 100%;
     flex-direction: column;
     gap: 1rem;
     margin: 1.8rem 0;
   }
+
+  .nav-list {
+    display: none;
+  }
+
   .logo-container h2 {
     font-size: 1rem;
   }
@@ -500,6 +505,13 @@ p {
   }
   #rightnav {
     width: 8rem;
+  }
+  .logo-container {
+    align-items: normal;
+  }
+  .message {
+    max-width: 50%;
+    padding: 0px;
   }
 }
 
