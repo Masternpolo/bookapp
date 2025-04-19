@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node server"
-
+    "start": "node server",
+    "start:prod": " NODE_ENV=production node server"
   },
   "author": "EDEOGU OGOMEGBUNAM",
   "license": "ISC",
@@ -19,7 +19,7 @@
     "express-validator": "^7.2.1",
     "jsonwebtoken": "^9.0.2",
     "multer": "^1.4.5-lts.2",
-    "mysql": "^2.18.1",
+    "pg": "^8.14.1",
     "socket.io": "^4.8.0",
     "socket.io-client": "^4.8.0"
   }

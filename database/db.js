@@ -1,17 +1,30 @@
-const mysql = require('mysql');
+const { Pool } = require('pg');
 require('dotenv').config();
 
-// SQL database connection
-const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE,
+const pool = new Pool({
+  connectionString: process.env.DB_URL,
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
 });
 
-db.connect((err) => {
-  if (err) console.error(err);
-  else console.log("connected to database");
+// Optional: test connection
+pool.query('SELECT NOW()', (err, res) => {
+  if (err) {
+    console.error('PostgreSQL connection error:', err.stack);
+    process.exit(1);
+  } else {
+    console.log('Connected to PostgreSQL at', res.rows[0].now);
+  }
 });
 
-module.exports = db;
+// Global error handlers
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught exception:', err);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled rejection at:', promise, 'reason:', reason);
+  process.exit(1);
+});
+
+module.exports = pool;

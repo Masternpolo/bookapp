@@ -1,7 +1,8 @@
+const dotenv = require('dotenv');
+dotenv.config({ path: './config.env' });
 const express = require('express');
 const app = express();
 const server = require('http').createServer(app);
-require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const socketHandler = require('./chat/chat');
 const port = process.env.PORT || 5000;
@@ -24,8 +25,8 @@ app.use('/', bookRoutes);
 
 const io = socketHandler(server);
 
-const path = require('path');
-app.use(express.static(path.join(__dirname, 'public')));
+// const path = require('path');
+app.use(express.static('public'));
 
 
 
