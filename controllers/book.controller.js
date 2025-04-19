@@ -22,6 +22,7 @@ class Bookcontroller {
             const imgPath = `/uploads/${req.file.filename}`
             
             const { title, author, genre, year } = req.body;
+            
             const message = await newBook.addBook(title, author, genre, year, imgPath);
             const user = req.user;
             
@@ -71,6 +72,8 @@ class Bookcontroller {
         try {
             const { books, totalPages } = await newBook.displayBooks(limit, offset);
             const user = req.user;
+            console.log(books[0]);
+            
             
             res.status(200).render('library', { message: null, books, totalPages, currentPage: page, user })
         } catch (error) {

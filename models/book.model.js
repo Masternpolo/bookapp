@@ -30,6 +30,8 @@ class Book {
             let totalPages = Math.ceil(totalBooks / limit);
 
             const result = await pool.query(sql, [limit, offset]);
+           
+            
 
             return { books: result.rows, totalPages };
         } catch (error) {

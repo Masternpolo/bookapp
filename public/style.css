@@ -156,6 +156,10 @@ nav ul li a {
   padding: 1rem;
   border-radius: 0.4rem;
 }
+
+.card p {
+  color: #000
+}
 .logo {
   cursor: pointer;
 }
@@ -415,6 +419,10 @@ p {
   #one {
     background-size: cover;
     background-position: center;
+  }
+
+  .card-container {
+    grid-template-columns: auto;
   }
 
   #chatbox {
