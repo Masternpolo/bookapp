@@ -301,9 +301,7 @@ input:focus {
 #hide {
   display: none;
 }
-p {
-  color: #fff;
-}
+
 .card img {
   width: 15rem;
   border-radius: 0.4rem;
@@ -536,8 +534,13 @@ p {
   .card-container {
     grid-template-columns: 1fr;
     align-items: center;
+    padding: 0;
   }
   #role {
     margin-left: 0.8rem;
+  }
+  #card-img {
+    width: 18rem;
+
   }
 }

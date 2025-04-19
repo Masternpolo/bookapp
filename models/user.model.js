@@ -4,8 +4,8 @@ const pool = require('../database/db');
 class User {
     async register(username, password, email, role) {
         try {
-            username = username.toLowerCase();
-            email = email.toLowerCase();
+            username = username.trim().toLowerCase();
+            email = email.trim().toLowerCase();
             const hashedPassword = await bcrypt.hash(password, 10);
 
             const sql = `INSERT INTO users(username, password, email, role) VALUES ($1, $2, $3, $4) RETURNING id`;
@@ -19,7 +19,7 @@ class User {
     }
 
     async authenticate(username, password) {
-        username = username.toLowerCase();
+        username = username.trim().toLowerCase();
 
         try {
             const sql = `SELECT * FROM users WHERE username = $1`;
@@ -38,7 +38,7 @@ class User {
     }
 
     async validateEmail(email) {
-        email = email.toLowerCase();
+        email = email.trim().toLowerCase();
 
         try {
             const sql = `SELECT * FROM users WHERE email = $1`;
@@ -51,7 +51,7 @@ class User {
     }
 
     async validateUsername(username) {
-        username = username.toLowerCase();
+        username = username.trim().toLowerCase();
 
         try {
             const sql = `SELECT * FROM users WHERE username = $1`;

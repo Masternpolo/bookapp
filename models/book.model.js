@@ -5,9 +5,9 @@ class Book {
 
     async addBook(title, author, genre, year, imgpath) {
         try {
-            title = title.toLowerCase();
-            author = author.toLowerCase();
-            genre = genre.toLowerCase();
+            title = title.trim().toLowerCase();
+            author = author.trim().toLowerCase();
+            genre = genre.trim().toLowerCase();
             year = year * 1;
 
             const sql = `INSERT INTO books (title, author, genre, year, cover_image_url) VALUES($1, $2, $3, $4, $5) RETURNING *`;
@@ -52,9 +52,9 @@ class Book {
     }
 
     async updateBook(title, author, genre, year, id) {
-        title = title.toLowerCase();
-        author = author.toLowerCase();
-        genre = genre.toLowerCase();
+        title = title.trim().toLowerCase();
+        author = author.trim().toLowerCase();
+        genre = genre.trim().toLowerCase();
         year = year * 1;
 
         try {
@@ -68,7 +68,7 @@ class Book {
     }
 
     async searchBook(booktitle) {
-        booktitle = `%${booktitle.toLowerCase()}%`;
+        booktitle = `%${booktitle.trim().toLowerCase()}%`;
         try {
             const sql = `SELECT * FROM books WHERE title ILIKE $1`;
             const result = await pool.query(sql, [booktitle]);
@@ -81,7 +81,7 @@ class Book {
 
 
     async filterBy(genreType) {
-        genreType = `%${genreType.toLowerCase()}%`;
+        genreType = `%${genreType.trim().toLowerCase()}%`;
 
         try {
             const sql = `SELECT * FROM books WHERE genre ILIKE $1`;
