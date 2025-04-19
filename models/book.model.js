@@ -12,7 +12,6 @@ class Book {
 
             const sql = `INSERT INTO books (title, author, genre, year, cover_image_url) VALUES($1, $2, $3, $4, $5) RETURNING *`;
             const result = await pool.query(sql, [title, author, genre, year, imgpath]);
-
             return 'Book uploaded successfully';
         } catch (error) {
             console.error("Database Error in addBook :", error);
